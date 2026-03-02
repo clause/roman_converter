@@ -18,10 +18,9 @@ def from_roman(roman: str) -> int:
         ("CD", 400), ("D", 500), ("CM", 900), ("M", 1000)
     ]
     conversion: int = 0
-    for seq, num in arabic_map:
+    for seq, num in reversed(arabic_map):
         count:int = 0
         while roman.startswith(seq): # check first letter
             conversion += num # add matching value
-            count+=1
-            roman = roman[count:] # remove recorded value
+            roman = roman[len(seq):] # remove recorded value
     return conversion
