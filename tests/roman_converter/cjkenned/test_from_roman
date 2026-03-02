@@ -1,0 +1,15 @@
+from types import ModuleType
+
+
+def test_from_roman(impl: ModuleType):
+    
+    # Basic Case with reepetition 
+    assert impl.from_roman("VIII" == 8)
+    
+    # Subtraction 
+    assert impl.from_roman("IV") == 4
+    assert impl.from_roman("IX") == 9
+    
+    # Invalid character / string 
+    impl.from_roman("A")
+    impl.from_roman("MMMMM")
